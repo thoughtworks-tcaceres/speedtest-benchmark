@@ -22,7 +22,7 @@ app.use(express.static(__dirname + "/public"));
 const apiRoutes = require("./routes/api");
 const defaultRoutes = require("./routes/default");
 app.use("/api", apiRoutes);
-app.use("/home", defaultRoutes);
+app.use("/", defaultRoutes);
 
 const server = app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
