@@ -1,4 +1,5 @@
-INSERT INTO users (username,email,first_name,last_name) VALUES
+INSERT INTO users (username,email,first_name,last_name)
+VALUES
 ('clelande0', 'clelande0@liveinternet.ru', 'Christian', 'Lelande'),
 ('rpfiffer1', 'rpfiffer1@prweb.com', 'Risa', 'Pfiffer'),
 ('cewin2', 'cewin2@1und1.de', 'Christos', 'Ewin'),
