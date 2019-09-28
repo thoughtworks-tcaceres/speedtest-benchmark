@@ -1,0 +1,21 @@
+<% include ./partials/header.ejs %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="main-border col-md-6 col-xs-12">
+      <% include ./partials/carousel.ejs %>
+    </div>
+    <div class="main-border col-md-6 col-xs-12">
+      <% if(!user) { %> <% include ./partials/signUp.ejs %> <% } else {%>
+      <div>
+        <img
+          src="https://ib1.hulu.com/user/v3/artwork/dcb9999a-2e6d-468f-8688-ae6ea320939a?base_image_bucket_name=image_manager&base_image=a3d6375e-256a-4955-a276-1883aba18c7c&size=400x600&format=jpeg"
+          alt="yugi,the king of games"
+        />
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<% include ./partials/footer.ejs %>

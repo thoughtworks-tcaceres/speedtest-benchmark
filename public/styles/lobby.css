@@ -1,0 +1,65 @@
+body {
+  background-size: cover;
+  background-color: darkgrey;
+}
+
+.createRoom {
+  font-family: sans-serif;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.5em;
+  width: 7.5em;
+  margin: 5px;
+  font-weight: inherit;
+  font-size: x-small;
+  padding: 5px 5px 5px 5px;
+  background-color: #283a49;
+  text-shadow: -1px -1px black, 1px 1px #706969;
+  color: ivory;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.2em #2a2e2b;
+  animation: shine 1s infinite;
+  cursor: pointer;
+}
+
+@keyframes shine {
+  0% {
+    background-color: #283a49;
+  }
+  25% {
+    background-color: #51606d;
+  }
+  50% {
+    background-color: #6e8495;
+  }
+  75% {
+    background-color: #323f49;
+  }
+  100% {
+    background-color: #283a49;
+  }
+}
+
+.makeAroom {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: x-small;
+  height: 2.5em;
+  width: 25em;
+}
+
+.img-fluid {
+  max-width: 20%;
+  height: auto;
+}
+
+.my-0 {
+  max-width: 30%;
+  height: auto;
+}
+
+.emailDisplay {
+  font-size: 1em;
+}

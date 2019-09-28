@@ -1,0 +1,49 @@
+<% include ./partials/header %>
+
+<div class="container my-3 mx-auto" id="button-div">
+  <button type="button" id="player-game-type" class="btn btn-danger">Player-Game-Type</button>
+  <button type="button" id="player-game" class="btn btn-warning">Player-Game</button>
+</div>
+<div>
+  <h3 class="mx-5" id="data-title">Select type of data to display</h3>
+</div>
+<div class="container container-fluid mx-auto my-5 table-responsive-md">
+
+<div id="player-game-toolbar">
+
+<table id="player-game-table" data-url="/api/archivedGames" data-toggle="table" data-search="true" data-filter-control="true" data-toolbar="#toolbar"
+class="table table-sm table-dark table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th data-field="username" data-filter-control="input" data-sortable="true">username</th>
+      <th data-field="email" data-filter-control="input" data-sortable="true">email</th>
+      <th data-field="game_name" data-filter-control="input" data-sortable="true">game name</th>
+      <th data-field="game_id" data-sortable="true">total wins</th>
+      <th data-field="win_loss" data-sortable="true">win ratio</th>
+    </tr>
+  </thead>
+  </table>
+</div>
+
+  <div id="player-game-type-toolbar">
+
+  <table id="player-game-type-table" data-url="/api/rankingsByGame" data-toggle="table" data-search="true" data-filter-control="true" data-toolbar="#toolbar"
+  class="table table-sm table-dark table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th data-field="username" data-filter-control="input" data-sortable="true">username</th>
+        <th data-field="email" data-filter-control="input" data-sortable="true">email</th>
+        <th data-field="game_name" data-filter-control="input" data-sortable="true">game name</th>
+        <th data-field="total_wins" data-sortable="true">total wins</th>
+        <th data-field="total_games" data-sortable="true">total games</th>
+        <th data-field="win_percent" data-sortable="true">win ratio</th>
+      </tr>
+    </thead>
+    </table>
+  </div>
+
+</div>
+
+</div>
+
+<% include ./partials/footer %>

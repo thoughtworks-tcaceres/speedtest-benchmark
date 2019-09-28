@@ -1,0 +1,34 @@
+{
+  "name": "node-skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "local": "./node_modules/.bin/nodemon -L --ignore public/",
+    "db:reset": "node bin/resetdb.js",
+    "sass": "sass --watch styles/layout.scss:public/styles/layout.css styles/lobby.scss:public/styles/lobby.css"
+  },
+  "author": "Lighthouse Labs",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "chalk": "^2.4.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^2.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-socket.io-session": "^1.3.5",
+    "morgan": "^1.9.1",
+    "node-sass-middleware": "^0.11.0",
+    "pg": "^6.4.2",
+    "pg-native": "^3.0.0",
+    "sass": "^1.22.9",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

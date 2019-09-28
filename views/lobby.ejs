@@ -1,0 +1,81 @@
+<% include ./partials/header %>
+
+<div id="lobby">
+
+<!-- DIFFERENCE -->
+  <div id = "gametabs">
+
+    <% for (let game in game_data) { %>
+      <% if(game === 'kingsCup' || game=== 'kingsCup2'){ %>
+      <button  class="game btn btn-secondary" data-gamename="<%= game %>" ><%= game %></button>
+      <% } %>
+    <% } %>
+  </div>
+  <br>
+
+  <!-- --------------------------------------------------------------------- -->
+
+  <div>
+    <% for (let game in game_data) { %>
+      <div class="roomList" id=<%=game%>>
+        <!--  -->
+        <br/>
+
+        <form method="POST" action="/games/createRoom" class="roomCreator" data-gamename=<%=game%>>
+          <!-- ONE class="makeAroom" -->
+          <input class="makeAroom" name="selectedName" placeholder="Room name here">
+          <!--  -->
+          <input type="hidden" name="gameName" value = "<%=game%>">
+          <% let uniquePasscodeForGame = 'chosenPasscodeFor' + game; %>
+          <input id=<%=uniquePasscodeForGame%> placeholder="Passcode (Optional)">
+          <!-- TWO class="createRoom"-->
+          <button class="createRoom" type="submit">Create a room</button>
+          <!--  -->
+        </form>
+        <br/>
+        <!--  -->
+        <% let uniqueBtnSectionId = 'availableRoomsFor' + game; %>
+        <div id=<%= uniqueBtnSectionId %>>
+          <% for (let room in game_data[game].room_data) { %>
+            <% let specificRoomBtnId = `specificRoomBtnIdFor${game}-${room}` %>
+            <button class="room" id=<%=specificRoomBtnId%> data-gameid=<%=game%> data-roomid=<%= room %> value=<%=room%>><%=room%></button>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <!-- --------------------------------------------------------------------- -->
+
+  <br>
+  <div id="logs" >
+    <br/>
+
+    <br/>
+  </div>
+
+  <!--  -->
+  <button id="joinGameBtn" style="display: none;">JOIN GAME!</button>
+  <button id="deleteRoomBtn" style="display: none; color: red;">Delete this room</button>
+  <p style="display: none;" id="waitingMsg">Waiting for other players to join...</p>
+  <!--  -->
+
+</div>
+
+<div id="passcodeForRoom" style="background-color: lightblue; display: none;">
+  <br/>
+  <p>Passcode is required for this room</p>
+  <form id="passcodeForm" method="POST" action="/games/insertPasscode">
+    <input name="insertedPasscode" placeholder="Enter passcode here" />
+    <button type="submit">Enter</button>
+    <!-- BYPASSING THE ERROR BY NOT SHOWING THE BUTTON. FIX IT LATER!!! -->
+    <button style="display: none;" id="passcodeCancel">Cancel</button>
+  </form>
+  <br />
+</div>
+
+<div id="wrongPasscodeEntered" style="display: none; border: red, solid; color: red; background-color: white;">Wrong passcode!</div>
+<div id="stopUserFromJoiningRoom" style="display: none; border: red, solid; color: red; background-color: white;"></div>
+
+  <% include ./mainPage %>
+  <% include ./partials/footer %>
