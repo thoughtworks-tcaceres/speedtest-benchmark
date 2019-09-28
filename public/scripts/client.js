@@ -1,4 +1,4 @@
-let socket = io.connect("http://localhost:8080/");
+let socket = io.connect("http://localhost:1000/");
 
 // //socket event listeners
 // socket.on("directToGame", data => {

@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 // Web server config
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 1000;
 const ENV = process.env.ENV || "development";
 const express = require("express");
 const app = express();
@@ -22,7 +22,7 @@ app.use(express.static(__dirname + "/public"));
 const apiRoutes = require("./routes/api");
 const defaultRoutes = require("./routes/default");
 app.use("/api", apiRoutes);
-app.use("/default", defaultRoutes);
+app.use("/home", defaultRoutes);
 
 const server = app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
