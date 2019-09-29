@@ -1,4 +1,5 @@
 require("dotenv").config();
+const axios = require("axios");
 
 // Web server config
 const PORT = process.env.PORT || 5000;
@@ -43,8 +44,14 @@ io.on("connection", socket => {
 
   const receiveUserDataAPI = async user_num => {
     try {
-      const data = await getSpecificUserDB(user_num);
+      const data = await axios.get("/api/query", {
+        params: {
+          id: user_num
+        }
+      });
+      console.log("DATA :", data);
       socket.emit("test 2 data", data);
+      console.log("does this happen??!?!??!");
     } catch (error) {
       console.log("error :", error);
     }

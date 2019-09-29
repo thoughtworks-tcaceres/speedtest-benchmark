@@ -18,7 +18,7 @@ $(document).ready(function() {
   });
 
   $("#test2").on("click", () => {
-    for (let i = 1; i <= 1000; i++) {
+    for (let i = 1; i <= 1; i++) {
       socket.emit("test 2 click", i);
     }
   });
