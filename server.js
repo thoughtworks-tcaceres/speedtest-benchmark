@@ -9,7 +9,7 @@ const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
-const { getSpecificUserDB } = require("./bin/helpers/dbHelpers.js");
+const { getUsersDB } = require("./bin/helpers/dbHelpers.js");
 
 // PG database client/connection setup
 const db = require("./db/db");
@@ -33,36 +33,30 @@ http.listen(80);
 
 io.on("connection", socket => {
   // ***** functions *****
-  const receiveUserData = async user_num => {
+  const receiveUserData = async () => {
     try {
-      const data = await getSpecificUserDB(user_num);
+      const data = await getUsersDB();
       socket.emit("test 1 data", data);
     } catch (error) {
       console.log("error :", error);
     }
   };
 
-  const receiveUserDataAPI = async user_num => {
+  const receiveUserDataAPI = async () => {
     try {
-      const data = await axios.get("/api/query", {
-        params: {
-          id: user_num
-        }
-      });
-      console.log("DATA :", data);
-      socket.emit("test 2 data", data);
-      console.log("does this happen??!?!??!");
+      const data = await axios.get("/api/query");
+      socket.emit("test 2 data", data.data);
     } catch (error) {
       console.log("error :", error);
     }
   };
   // ***** end of functions *****
 
-  socket.on("test 1 click", user_num => {
-    receiveUserData(user_num);
+  socket.on("test 1 click", () => {
+    receiveUserData();
   });
 
-  socket.on("test 2 click", user_num => {
-    receiveUserDataAPI(user_num);
+  socket.on("test 2 click", () => {
+    receiveUserDataAPI();
   });
 });
