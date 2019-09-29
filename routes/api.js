@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const { getAllUsersDB } = require("../bin/helpers/dbHelpers");
+const { getSpecificUserDB } = require("../bin/helpers/dbHelpers");
 
-router.get("/archivedGames", async (req, res) => {
+router.get("/query", async (req, res) => {
   try {
-    const data = await getArchivedGames;
+    const data = await getSpecificUserDB(req.params.id);
     return res.json(data);
   } catch (error) {
     console.log("error :", error);

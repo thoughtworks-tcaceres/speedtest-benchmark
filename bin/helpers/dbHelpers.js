@@ -1,17 +1,16 @@
 const db = require("../../db/db");
 
 //player rankings by game type
-const getAllUsersDB = () => {
-  const queryString = `select * from users order by email`;
+const getSpecificUserDB = user_num => {
+  const queryString = `select * from users where id = $1`;
   return db
     .query({
       text: queryString,
-      values: []
-      // name: "get_player_rankings_game_type"
+      values: [user_num]
     })
-    .then(res => res.rows);
+    .then(res => res.rows[0]);
 };
 
 module.exports = {
-  getAllUsersDB
+  getSpecificUserDB
 };

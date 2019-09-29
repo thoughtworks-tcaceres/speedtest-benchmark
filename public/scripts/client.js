@@ -1,28 +1,25 @@
-let socket = io.connect("http://localhost:1000/");
+$(document).ready(function() {
+  let socket = io.connect("http://localhost:80");
 
-// //socket event listeners
-// socket.on("directToGame", data => {
-//   $("#lobby").slideUp(100);
-//   console.log("MAKI CHAN");
-//   console.log(`#gameFor${data.uniqueRoomName}`);
-//   $(`#gameFor${data.gameId}`).toggle(1000);
-// });
+  // socket event
+  socket.on("test 1 data", data => {
+    console.log("test 1 data: ", data);
+  });
 
-// // functions
-// const handleDeleteRoomBtn = function() {
-//   $("#deleteRoomBtn").on("click", function() {
-//     socket.emit("deleteSpecificRoom");
-//   });
-// };
+  socket.on("test 2 data", data => {
+    console.log("test 2 data: ", data);
+  });
 
-// // Loading jquery
-// $(document).ready(function() {
-//   roomJoiner();
-//   dynamicRoom();
-//   showRoomsForGame();
-//   // userRedirection();
-//   loadJoinGameBtn();
-//   passcodeInputHandler();
-//   handleCancelPasscode();
-//   handleDeleteRoomBtn();
-// });
+  // click event
+  $("#test1").on("click", () => {
+    for (let i = 1; i <= 1000; i++) {
+      socket.emit("test 1 click", i);
+    }
+  });
+
+  $("#test2").on("click", () => {
+    for (let i = 1; i <= 1000; i++) {
+      socket.emit("test 2 click", i);
+    }
+  });
+});
