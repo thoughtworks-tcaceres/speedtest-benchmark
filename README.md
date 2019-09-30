@@ -58,10 +58,13 @@ clicking on the result button shows the list of the results in the browser's con
 !["homepage"](./docs/homepage.png)
 
 `test 1 results: socket -> db`
+
 !["test 1 results"](./docs/test1.png)
 
 `test 2 results: socket -> api -> db`
+
 !["test 2 results"](./docs/test2.png)
 
 `test 3 results: api -> db`
+
 !["test 3 results"](./docs/test3.png)
