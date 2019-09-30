@@ -3,10 +3,31 @@
 }
 
 .title {
+  display: flex;
+  justify-content: center;
   text-transform: uppercase;
+  padding: 0px;
+  margin: 0px;
 }
 
 .test {
   margin: 2em 0;
   border: 3px solid grey;
+  padding: 0px;
+}
+
+.results {
+  border: 3px solid green;
+  padding: 0px;
+  margin: 0px;
+}
+
+h2 {
+  padding: 0px;
+  margin: 0px;
+}
+
+h3 {
+  padding: 0px;
+  margin: 0px;
 }

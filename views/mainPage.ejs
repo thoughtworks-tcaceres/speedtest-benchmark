@@ -17,20 +17,36 @@
     <div class="container">
       <h1 class="title">speed test</h1>
       <div class="test">
-        <button id="test1">test 1</button>
+        <h2>TEST #1</h2>
         <h3>socket -> db</h3>
+        <p>
+          This test uses the socket connection. The socket event listener on the server side
+          directly queries against the database.
+        </p>
+        <button id="test1">RUN TEST 1</button>
       </div>
       <div class="test">
-        <button id="test2">test 2</button>
+        <h2>TEST #2</h2>
         <h3>socket -> api -> db</h3>
+        <p>
+          This test uses the socket connection. The socket event listener on the server side
+          requests the data via an API request.
+        </p>
+        <button id="test2">RUN TEST 2</button>
       </div>
       <div class="test">
-        <button id="test3">test 3</button>
+        <h2>TEST #3</h2>
         <h3>api -> db</h3>
+        <p>
+          This test requests the data via an API request.
+        </p>
+        <button id="test3">RUN TEST 3</button>
       </div>
-      <div>
-        <button id="results">results</button>
-        <h3>click here to obtain results</h3>
+      <div class="results">
+        <h2>RESULTS</h2>
+        <h3>click button for results</h3>
+        <p>check console log for results</p>
+        <button id="results">RESULTS</button>
       </div>
     </div>
   </body>

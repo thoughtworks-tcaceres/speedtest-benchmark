@@ -16,14 +16,12 @@ $(document).ready(function() {
     test.test1[i].end = new Date().getTime();
     test.test1[i].total = test.test1[i].end - test.test1[i].start;
     i++;
-    console.log("test 1 data: ", data);
   });
 
   socket.on("test 2 data", data => {
     test.test2[j].end = new Date().getTime();
     test.test2[j].total = test.test2[j].end - test.test2[j].start;
     j++;
-    console.log("test 2 data: ", data);
   });
 
   // click event
@@ -52,13 +50,12 @@ $(document).ready(function() {
       .done(data => {
         test.test3[k].end = new Date().getTime();
         test.test3[k].total = test.test3[k].end - test.test3[k].start;
-        console.log(data);
       })
       .fail(err => console.log(err))
       .always(() => k++);
   });
 
   $("#results").on("click", () => {
-    console.table(test);
+    console.log(test);
   });
 });
