@@ -1,6 +1,6 @@
-# LHL CARD GAMES
+# Speed Comparison of API requests
 
-Light house labs midterm project. Real time gaming application using socket IO.
+This
 
 # Tech Stack
 
