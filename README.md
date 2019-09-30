@@ -57,6 +57,14 @@ clicking on the result button shows the list of the results in the browser's con
 
 !["homepage"](./docs/homepage.png)
 
+`data - shows the 3 test scenarios`
+
+```
+20 iterations were taken for each of the 3 types of scenarios
+```
+
+!["data"](./docs/data.png)
+
 `test 1 results: socket -> db`
 
 !["test 1 results"](./docs/test1.png)
