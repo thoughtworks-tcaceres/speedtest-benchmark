@@ -1,0 +1,12 @@
+.container {
+  border: 5px solid red;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.test {
+  margin: 2em 0;
+  border: 3px solid grey;
+}
