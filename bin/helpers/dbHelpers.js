@@ -7,7 +7,7 @@ const getUsersDB = user_num => {
     .query({
       text: queryString
     })
-    .then(res => res.rows[0]);
+    .then(res => res.rows);
 };
 
 module.exports = {
