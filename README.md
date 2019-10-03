@@ -29,7 +29,7 @@ This repository shows a comparison of 3 different ways to get data from the serv
 # Instructions
 
 1. create postgresql database named 'speedtest'
-2. create .env file in the root directory that includes the following information (Note: change the information to match your own)
+2. modify .env file to reflect your database information
 
 ```
 DB_HOST=localhost
